@@ -78,7 +78,6 @@ var image5 = new sliderPics("https://images.alphacoders.com/795/795473.png","Lor
 slider.push(image1,image2,image3,image4,image5);
 
 
-
 function populate(slider){
   var len = slider.length-1;
   sliderselector.append("<img src=" + slider[len].src + " title=" + slider[len].alt + " class=slides height=300px width=480px >");
@@ -88,14 +87,33 @@ function populate(slider){
   }
   sliderselector.append("<img src=" + slider[0].src + " title=" + slider[0].alt + " class=slides height=300px width=480px >");
 }
+
 populate(slider);
 
-sliderselector.children().hide();
-sliderselector.children().eq(0).addClass("left").show();
-sliderselector.children().eq(1).addClass("current").show();
-sliderselector.children().eq(2).addClass("right").show();
+if(window.innerWidth < 480){
+  sliderselector.children().eq(0).addClass("left").hide();
+  sliderselector.children().eq(1).addClass("current").show();
+  sliderselector.children().eq(2).addClass("right").hide();
+}
+else {
+  sliderselector.children().hide();
+  sliderselector.children().eq(0).addClass("left").show();
+  sliderselector.children().eq(1).addClass("current").show();
+  sliderselector.children().eq(2).addClass("right").show();
+}
 
 function changepanel(variable){
+  if(window.innerWidth < 480){
+    sliderselector.children().removeClass("left").hide();
+    sliderselector.children().removeClass("current").hide();
+    sliderselector.children().removeClass("right").hide();
+    sliderselector.children().eq(variable).addClass("left").hide();
+    sliderselector.children().eq(variable+1).addClass("current").fadeIn(500);
+    sliderselector.children().eq(variable+2).addClass("right").hide();
+    dots.children().removeClass("active");
+    dots.children().eq(variable).addClass("active");
+    return false;
+  }
   sliderselector.children().removeClass("left").hide();
   sliderselector.children().removeClass("current").hide();
   sliderselector.children().removeClass("right").hide();

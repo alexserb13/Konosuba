@@ -61,6 +61,10 @@ $primary-color:white;
   margin: 0px 0px 0px 0px;
 }
 
+.ui-dialog-titlebar{
+  display: none;
+}
+
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active {
   border:0px;
   background: none;
@@ -78,6 +82,7 @@ $primary-color:white;
   @include height-width (100%, 100%);
   @include positioning(0,0,none,0);
   background-color:rgba(0, 0, 0, 0.8);
+  padding: 0px 0px 0px 0px;
 }
 
 #ui-id-1{
@@ -391,6 +396,9 @@ body > div:nth-of-type(2){
     left: 50%;
     transform: translateX(-50%);
   }
+  .slideswrapper{
+    width: 75%;
+  }
 }
 
 @media all and (max-width: 1500px) and (min-width:1201px){
@@ -400,6 +408,9 @@ body > div:nth-of-type(2){
     left: 50%;
     transform: translateX(-50%);
   }
+  .slideswrapper{
+    width: 86%;
+  }
 }
 
 @media all and (max-width: 1200px) and (min-width:901px){
@@ -408,6 +419,7 @@ body > div:nth-of-type(2){
     height: 100%;
     width: 80%;
     margin: auto;
+    margin-top: 0px;
     left: 5px;
     right: 5px;
     & > ul > li > a:first-of-type,
@@ -452,26 +464,8 @@ body > div:nth-of-type(2){
     margin-top:40px;
   }
 
-  body > div:nth-of-type(2){
-    margin: auto;
-    #myform{
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      margin: auto;
-      text-align:center;
-      & > input:nth-of-type(1),& > input:nth-of-type(2){
-        @include padding (10px,10px,15px,15px);
-        @include height-width (auto, 220px);
-      }
-      & > textarea:first-of-type{
-        border: none;
-        @include height-width (150px, 220px);
-      }
-      & > button:nth-of-type(1){
-        @include height-width (auto, 255px);
-      }
-    }
+  .slideswrapper{
+    width: 80%;
   }
 }
 
@@ -481,6 +475,7 @@ body > div:nth-of-type(2){
     height: 100%;
     width: 80%;
     margin: auto;
+    margin-top: 0px;
     left: 5px;
     right: 5px;
     & > ul > li > a:first-of-type,
@@ -526,26 +521,8 @@ body > div:nth-of-type(2){
     margin-top:40px;
   }
 
-  body > div:nth-of-type(2){
-    margin: auto;
-    #myform{
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      margin: auto;
-      text-align:center;
-      & > input:nth-of-type(1),& > input:nth-of-type(2){
-        @include padding (10px,10px,15px,15px);
-        @include height-width (auto, 220px);
-      }
-      & > textarea:first-of-type{
-        border: none;
-        @include height-width (150px, 220px);
-      }
-      & > button:nth-of-type(1){
-        @include height-width (auto, 255px);
-      }
-    }
+  .slideswrapper{
+    width: 80%;
   }
 }
 
@@ -553,12 +530,62 @@ body > div:nth-of-type(2){
   body{
     @include height-width (100%, 100%);
     position: absolute;
+    margin: auto;
   }
+
+  .ui-dialog-content{
+    @include height-width (100%, 100%);
+    background-color:rgba(0, 0, 0, 0.8);
+    color:$primary-color;
+    font-family: $primary-font;
+    display:none;
+    position:absolute;
+    z-index:5;
+    text-align:center;
+    #myform{
+      @include positioning(15%,none,none,38%);
+      color: $primary-color;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align:center;
+      & > input:nth-of-type(1),& > input:nth-of-type(2){
+        @include padding (15px,15px,15px,15px);
+        @include border-radius-a(10px,10px,10px,10px);
+        @include height-width (auto, 200px);
+        border: none;
+        margin:5px;
+        resize:none;
+        font-size: 25px;
+      }
+      & > textarea:first-of-type{
+        border: none;
+        @include border-radius-a(10px,10px,10px,10px);
+        @include padding (15px,15px,15px,15px);
+        @include height-width (150px, 200px);
+        margin:5px;
+        resize:none;
+        font-size: 25px;
+      }
+      & > button:nth-of-type(1){
+        @include border-radius-a(10px,10px,10px,10px);
+        @include padding (15px,15px,15px,15px);
+        @include height-width (auto, 235px);
+        background-color:#e30089;
+        color: $primary-color;
+        margin:5px;
+        border:none;
+        font-size: 35px;
+      }
+    }
+  }
+
   #maintabs{
     position: absolute;
     height: 100%;
     width: 100%;
     margin: auto;
+    margin-top: 0px;
     left: 0;
     right: 0;
     & > ul > li > a:first-of-type,
@@ -606,29 +633,17 @@ body > div:nth-of-type(2){
     margin-top:40px;
   }
 
-
-  body > div:nth-of-type(2){
-    margin: auto;
-    #myform{
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align:center;
-      font-size:15px;
-      & > input:nth-of-type(1),& > input:nth-of-type(2){
-        @include padding (10px,10px,15px,15px);
-        @include height-width (20px, 180px);
-        font-size:15px;
-      }
-      & > textarea:first-of-type{
-        font-size:15px;
-        border: none;
-        @include height-width (60px, 180px);
-      }
-      & > button:nth-of-type(1){
-        font-size:25px;
-        @include height-width (60px, 215px);
-      }
-    }
+  .slideswrapper{
+    width: 100%;
+  }
+  .left{
+      display:none;
+  }
+  .current{
+    position: relative;
+    left: 0;
+  }
+  .right{
+    display: none;
   }
 }
