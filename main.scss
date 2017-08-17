@@ -1,0 +1,526 @@
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Open Sans', sans-serif;
+$primary-color:white;
+@mixin border-radius-a ($tl,$tr,$br,$bl) {
+  border-top-left-radius: $tl;
+  border-top-right-radius: $tr;
+  border-bottom-right-radius: $br;
+  border-bottom-left-radius: $bl;
+}
+
+@mixin arrange ($fl,$bs){
+  float: $fl;
+  box-sizing: $bs;
+}
+
+@mixin padding ($pt ,$pb,$pr,$pl) {
+  padding-top: $pt;
+  padding-bottom: $pb;
+  padding-right: $pr;
+  padding-left: $pl;
+}
+
+@mixin height-width ($h,$w) {
+  height: $h;
+  width: $w;
+}
+
+@mixin positioning ($t,$b,$r,$l){
+  top: $t;
+  bottom: $b;
+  right: $r;
+  left: $l;
+}
+
+*{
+  margin:0;
+  font-family:$primary-font;
+}
+
+body{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background:url(https://www.toptal.com/designers/subtlepatterns/patterns/pink%20dust.png);
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+h1{
+  margin:20px;
+}
+
+h5{
+  letter-spacing: 6px;
+}
+
+p{
+  font-size: 13px;
+}
+
+.slideswrapper > img{
+  position: relative;
+}
+
+.sli{
+  height: 300px;
+  width: 3000px;
+  display: block;
+}
+
+.slideswrapper{
+  margin: 0;
+  @include height-width (300px, 75%);
+  @include positioning(100px,n,0,16%);
+  display: inline;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.dots{
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  height: 18px;
+  background-color:rgba(0, 0, 0, 0.6);
+}
+
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #717171  ;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color:#ccc ;
+}
+
+.left{
+    position: absolute;
+    left: -200px;
+    clip: rect(0px,480px,300px,200px);
+}
+.current{
+  position: relative;
+  left: 22.5vw;
+}
+
+.right{
+  position: absolute;
+  left:60vw;
+}
+
+.showalt{
+  z-index: 4;
+  position: absolute;
+  left: 22.5vw;
+  background-color: white;
+}
+
+header{
+  font-family: $secondary-font;
+  color:white;
+  margin-top:30px;
+  text-align:center;
+}
+
+#maintabs{
+  @include border-radius-a (0px,0px,5px,5px);
+  @include height-width (auto, 70%);
+  @include positioning(450px,none,none,16%);
+  position:absolute;
+  & > ul > li > a:first-of-type,
+  & > ul > li:nth-child(2)> a{
+    font-family:$secondary-font;
+    @include border-radius-a (10px,10px,0px,0px);
+    @include padding (0px,0px,30px,30px);
+    @include arrange(left ,none);
+    background-color: lightgrey;
+    color: grey;
+    line-height: 50px;
+  }
+  & > ul > a:first-of-type{
+    @include border-radius-a (10px,10px,0px,10px);
+    @include padding (0px,0px,30px,30px);
+    @include arrange(right,none);
+    background-color:orange;
+    line-height: 35px;
+    border-color: white;
+    border-style: solid;
+    border-width: 2px;
+    color: black;
+  }
+}
+
+#home{
+  @include border-radius-a (0px,0px,10px,10px);
+  @include arrange(none ,border-box);
+  @include padding (20px,20px,20px,20px);
+  @include height-width (450px,100% );
+  background-color: $primary-color;
+  margin-top:50px;
+  z-index: 2;
+  & > div:first-child{
+    @include arrange(left ,border-box);
+    @include height-width (100%, calc(100% - 260px));
+    margin:0;
+    & > div:nth-child(2){
+      @include arrange(left ,border-box);
+      @include padding (10px,10px,10px,10px);
+      @include height-width (auto, 70%);
+      column-count:2;
+    }
+    & > div:nth-child(1){
+      @include arrange(left ,none);
+      @include height-width (305px, 215px);
+      background:url(https://myanimelist.cdn-dena.com/images/anime/8/77831.jpg);
+      background-size:contain;
+      background-repeat:no-repeat;
+      margin:0;
+    }
+    & > div:nth-child(3){
+      @include arrange(left ,border-box);
+      @include padding (10px,10px,10px,10px);
+    }
+  }
+
+  & > div:nth-child(2){
+    @include border-radius-a (5px,5px,5px,5px);
+    @include arrange(right,none);
+    @include height-width (360px, 240px);
+    background:
+    url(http://img1.ak.crunchyroll.com/i/spire3/7ba81b1709a87f5ca8930229b10029a61484092235_full.jpg);
+    background-size:contain;
+    background-repeat:no-repeat;
+  }
+}
+
+#about{
+  @include border-radius-a (0px,0px,10px,10px);
+  @include arrange(none ,border-box);
+  @include padding (20px,20px,20px,20px);
+  @include height-width (450px, 100%);
+  @include positioning(50px,none,none,none);
+  background-color:$primary-color;
+  display: none;
+  z-index:3;
+  position: absolute;
+}
+
+body > div:nth-of-type(2){
+  @include height-width (100%, 100%);
+  @include positioning(0,0,none,0);
+  background-color:rgba(0, 0, 0, 0.8);
+  color:$primary-color;
+  font-family: $primary-font;
+  display:none;
+  position:absolute;
+  z-index:5;
+  text-align:center;
+  #myform{
+    @include positioning(15%,none,none,38%);
+    color: $primary-color;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align:center;
+    & > input:nth-of-type(1),& > input:nth-of-type(2){
+      @include padding (15px,15px,15px,15px);
+      @include border-radius-a(10px,10px,10px,10px);
+      @include height-width (auto, 300px);
+      border: none;
+      margin:5px;
+      resize:none;
+      font-size: 25px;
+    }
+    & > textarea:first-of-type{
+      border: none;
+      @include border-radius-a(10px,10px,10px,10px);
+      @include padding (15px,15px,15px,15px);
+      @include height-width (150px, 300px);
+      margin:5px;
+      resize:none;
+      font-size: 25px;
+    }
+    & > button:nth-of-type(1){
+      @include border-radius-a(10px,10px,10px,10px);
+      @include padding (15px,15px,15px,15px);
+      @include height-width (auto, 335px);
+      background-color:#e30089;
+      color: $primary-color;
+      margin:5px;
+      border:none;
+      font-size: 35px;
+    }
+  }
+}
+
+@media all and (min-width: 1501px){
+  #maintabs{
+    @include height-width (auto, 75%);
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media all and (max-width: 1500px) and (min-width:1201px){
+  #maintabs{
+    @include height-width (auto, 86%);
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media all and (max-width: 1200px) and (min-width:901px){
+  #maintabs{
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    left: 5px;
+    right: 5px;
+    & > ul > li > a:first-of-type,
+    & > ul > li:nth-child(2)> a{
+      @include padding (0px,0px,15px,15px);
+      line-height: 40px;
+    }
+
+    & > ul > a:first-of-type{
+      @include padding (0px,0px,15px,15px);
+      line-height: 25px;
+    }
+  }
+
+  #home{
+    position: absolute;
+    @include padding (20px,20px,11px,10px);
+    @include height-width (auto,100% );
+    margin-top:40px;
+    & > div:first-child{
+      @include height-width (100%, 100%);
+      clear: both;
+      & > div:nth-child(2){
+        @include height-width (auto, calc(100% - 220px));
+        column-width: 50px;
+      }
+      & > div:nth-child(1){
+        @include height-width (305px, 215px);
+        position:relative;
+      }
+    }
+    & > div:nth-child(2){
+      clear: both;
+      @include height-width (360px, 240px);
+      position: relative;
+      right:50%;
+      transform: translateX(50%);
+    }
+  }
+
+  #about{
+    top:40px;
+  }
+
+  body > div:nth-of-type(2){
+    margin: auto;
+    #myform{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: auto;
+      text-align:center;
+      & > input:nth-of-type(1),& > input:nth-of-type(2){
+        @include padding (10px,10px,15px,15px);
+        @include height-width (auto, 220px);
+      }
+      & > textarea:first-of-type{
+        border: none;
+        @include height-width (150px, 220px);
+      }
+      & > button:nth-of-type(1){
+        @include height-width (auto, 255px);
+      }
+    }
+  }
+}
+
+@media all and (max-width: 900px) and (min-width:480px){
+  #maintabs{
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    left: 5px;
+    right: 5px;
+    & > ul > li > a:first-of-type,
+    & > ul > li:nth-child(2)> a{
+      @include padding (0px,0px,15px,15px);
+      line-height: 40px;
+    }
+    & > ul > a:first-of-type{
+      @include padding (0px,0px,15px,15px);
+      line-height: 25px;
+    }
+  }
+
+  #home{
+    position: absolute;
+    @include padding (20px,20px,11px,10px);
+    @include height-width (auto,100% );
+    margin-top:40px;
+    & > div:first-child{
+      @include height-width (100%, 100%);
+      clear: both;
+      & > div:nth-child(2){
+        @include height-width (auto, 100%);
+        column-width: 50px;
+      }
+      & > div:nth-child(1){
+        @include height-width (305px, 215px);
+        position:relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    & > div:nth-child(2){
+      clear: both;
+      @include height-width (360px, 240px);
+      position: relative;
+      right:50%;
+      transform: translateX(50%);
+    }
+  }
+
+  #about{
+    top:40px;
+  }
+
+  body > div:nth-of-type(2){
+    margin: auto;
+    #myform{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: auto;
+      text-align:center;
+      & > input:nth-of-type(1),& > input:nth-of-type(2){
+        @include padding (10px,10px,15px,15px);
+        @include height-width (auto, 220px);
+      }
+      & > textarea:first-of-type{
+        border: none;
+        @include height-width (150px, 220px);
+      }
+      & > button:nth-of-type(1){
+        @include height-width (auto, 255px);
+      }
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  body{
+    @include height-width (100%, 100%);
+    position: absolute;
+  }
+  #maintabs{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    & > ul > li > a:first-of-type,
+    & > ul > li:nth-child(2)> a{
+      @include padding (0px,0px,10px,10px);
+      line-height: 40px;
+    }
+
+    & > ul > a:first-of-type{
+      @include padding (0px,0px,10px,10px);
+      line-height: 25px;
+    }
+  }
+
+  #home{
+    position: absolute;
+    @include padding (20px,20px,11px,10px);
+    @include height-width (auto,100% );
+    margin-top:40px;
+    & > div:first-child{
+      @include height-width (100%, 100%);
+      clear: both;
+      & > div:nth-child(2){
+        @include height-width (auto, 100%);
+        column-width: 50px;
+        column-count: 1;
+      }
+      & > div:nth-child(1){
+        @include height-width (305px, 215px);
+        position: relative;
+        left:50%;
+        transform: translateX(-50%);
+      }
+    }
+    & > div:nth-child(2){
+      clear: both;
+      @include height-width (360px, 240px);
+      position: relative;
+      right:50%;
+      transform: translateX(50%);
+    }
+  }
+
+  #about{
+    top:40px;
+  }
+
+
+  body > div:nth-of-type(2){
+    margin: auto;
+    #myform{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align:center;
+      font-size:15px;
+      & > input:nth-of-type(1),& > input:nth-of-type(2){
+        @include padding (10px,10px,15px,15px);
+        @include height-width (20px, 180px);
+        font-size:15px;
+      }
+      & > textarea:first-of-type{
+        font-size:15px;
+        border: none;
+        @include height-width (60px, 180px);
+      }
+      & > button:nth-of-type(1){
+        font-size:25px;
+        @include height-width (60px, 215px);
+      }
+    }
+  }
+}
