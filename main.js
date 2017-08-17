@@ -16,9 +16,8 @@ homelabel.css({"background-color":"white","color":"#e30089"});
 $( function() {
   form_item.tooltip({tooltipClass: "tooltip"});
   $("textarea").tooltip({tooltipClass: "tooltip"});
+  contactpage.dialog({width:"100%",autoOpen: false,resizable: false,draggable: false});
   });
-
-$("ul").removeClass("ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header");
 
 function check(first,second){
   $('#'+first).click(function (event){
@@ -32,17 +31,17 @@ check("maintabs > ul > li:first-child> a","maintabs > ul > li:nth-child(2)> a");
 check("maintabs > ul > li:nth-child(2)> a","maintabs > ul > li:first-child> a");
 
 contactlabel.click(function (event){
-  contactpage.fadeIn();
+  $(".ui-dialog").fadeIn();
 });
 
-exitlabel.css({"float":"right","font-size":"35px","margin":"10px"});
+exitlabel.css({"float":"right","font-size":"35px","margin":"50px","top":"0","color":"white"});
 
 exitlabel.click(function (event){
-  contactpage.slideToggle('slow','swing');
+  $(".ui-dialog").slideToggle('slow','swing');
 });
 
 button.click(function (event){
-  contactpage.fadeOut();
+  $(".ui-dialog").fadeOut();
 });
 
 form_item.keypress(function (event){

@@ -14,6 +14,9 @@
 .ui-tabs .ui-tabs-nav {
   padding: 0px 0px 0px 0px; }
 
+.ui-dialog-titlebar-close {
+  visibility: hidden; }
+
 .ui-tabs .ui-tabs-nav li {
   margin: 0px 0px 0px 0px; }
 
@@ -27,6 +30,91 @@
 
 .tooltip {
   background: white; }
+
+.ui-dialog {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: none;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8); }
+
+#ui-id-1 {
+  padding: 0px 0px 0px 0px; }
+
+.ui-dialog .ui-dialog-content {
+  overflow: visible; }
+
+.ui-dialog-titlebar {
+  background-color: rgba(0, 0, 0, 0.1); }
+
+.ui-dialog-content {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-family: "Roboto", sans-serif;
+  display: none;
+  position: absolute;
+  z-index: 5;
+  text-align: center; }
+  .ui-dialog-content #myform {
+    top: 15%;
+    bottom: none;
+    right: none;
+    left: 38%;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center; }
+    .ui-dialog-content #myform > input:nth-of-type(1), .ui-dialog-content #myform > input:nth-of-type(2) {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-right: 15px;
+      padding-left: 15px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      height: auto;
+      width: 300px;
+      border: none;
+      margin: 5px;
+      resize: none;
+      font-size: 25px; }
+    .ui-dialog-content #myform > textarea:first-of-type {
+      border: none;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-right: 15px;
+      padding-left: 15px;
+      height: 150px;
+      width: 300px;
+      margin: 5px;
+      resize: none;
+      font-size: 25px; }
+    .ui-dialog-content #myform > button:nth-of-type(1) {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-right: 15px;
+      padding-left: 15px;
+      height: auto;
+      width: 335px;
+      background-color: #e30089;
+      color: white;
+      margin: 5px;
+      border: none;
+      font-size: 35px; }
 
 * {
   margin: 0;
@@ -139,7 +227,8 @@ header {
   bottom: none;
   right: none;
   left: 16%;
-  position: absolute; }
+  position: absolute;
+  display: block; }
   #maintabs > ul > li > a:first-of-type, #maintabs > ul > li:nth-child(2) > a {
     font-family: "Open Sans", sans-serif;
     border-top-left-radius: 10px;
@@ -260,7 +349,6 @@ body > div:nth-of-type(2) {
   bottom: 0;
   right: none;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   font-family: "Roboto", sans-serif;
   display: none;

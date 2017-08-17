@@ -53,6 +53,10 @@ $primary-color:white;
   padding: 0px 0px 0px 0px;
 }
 
+.ui-dialog-titlebar-close {
+    visibility: hidden;
+}
+
 .ui-tabs .ui-tabs-nav li{
   margin: 0px 0px 0px 0px;
 }
@@ -68,6 +72,72 @@ $primary-color:white;
 
 .tooltip{
   background: white;
+}
+
+.ui-dialog{
+  @include height-width (100%, 100%);
+  @include positioning(0,0,none,0);
+  background-color:rgba(0, 0, 0, 0.8);
+}
+
+#ui-id-1{
+  padding: 0px 0px 0px 0px;
+}
+
+
+.ui-dialog .ui-dialog-content{
+  overflow:visible;
+}
+
+.ui-dialog-titlebar{
+ background-color:rgba(0, 0, 0, 0.1);
+}
+
+.ui-dialog-content{
+  @include height-width (100%, 100%);
+  background-color:rgba(0, 0, 0, 0.8);
+  color:$primary-color;
+  font-family: $primary-font;
+  display:none;
+  position:absolute;
+  z-index:5;
+  text-align:center;
+  #myform{
+    @include positioning(15%,none,none,38%);
+    color: $primary-color;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align:center;
+    & > input:nth-of-type(1),& > input:nth-of-type(2){
+      @include padding (15px,15px,15px,15px);
+      @include border-radius-a(10px,10px,10px,10px);
+      @include height-width (auto, 300px);
+      border: none;
+      margin:5px;
+      resize:none;
+      font-size: 25px;
+    }
+    & > textarea:first-of-type{
+      border: none;
+      @include border-radius-a(10px,10px,10px,10px);
+      @include padding (15px,15px,15px,15px);
+      @include height-width (150px, 300px);
+      margin:5px;
+      resize:none;
+      font-size: 25px;
+    }
+    & > button:nth-of-type(1){
+      @include border-radius-a(10px,10px,10px,10px);
+      @include padding (15px,15px,15px,15px);
+      @include height-width (auto, 335px);
+      background-color:#e30089;
+      color: $primary-color;
+      margin:5px;
+      border:none;
+      font-size: 35px;
+    }
+  }
 }
 
 *{
@@ -188,6 +258,7 @@ header{
   @include height-width (auto, 70%);
   @include positioning(450px,none,none,16%);
   position:absolute;
+  display: block;
   & > ul > li > a:first-of-type,
   & > ul > li:nth-child(2)> a{
     font-family:$secondary-font;
@@ -269,7 +340,6 @@ header{
 body > div:nth-of-type(2){
   @include height-width (100%, 100%);
   @include positioning(0,0,none,0);
-  background-color:rgba(0, 0, 0, 0.8);
   color:$primary-color;
   font-family: $primary-font;
   display:none;
