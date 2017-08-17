@@ -99,6 +99,14 @@ function changepanel(variable){
 
 }
 
+dots.children().eq(0).addClass("active");
+$('.dots').on('click', 'span', function(e) {
+	 			var $this = $(this);
+        changepanel($this.index());
+        dots.children().removeClass("active");
+        $this.addClass("active");
+});
+
 var x = 1;
 var set = setInterval(function(){
   changepanel(x);
