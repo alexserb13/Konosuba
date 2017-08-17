@@ -32,6 +32,44 @@ $primary-color:white;
   left: $l;
 }
 
+
+.ui-widget.ui-widget-content{
+  border: 0px;
+}
+
+.ui-widget-content{
+  background: none;
+}
+
+.ui-helper-clearfix:before, .ui-helper-clearfix:after{
+    content: "";
+    display: none;
+}
+
+.ui-widget-header{
+  border: 0px;
+}
+.ui-tabs .ui-tabs-nav {
+  padding: 0px 0px 0px 0px;
+}
+
+.ui-tabs .ui-tabs-nav li{
+  margin: 0px 0px 0px 0px;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active {
+  border:0px;
+  background: none;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+  border:0px;
+  background: none;
+}
+
+.tooltip{
+  background: white;
+}
+
 *{
   margin:0;
   font-family:$primary-font;
@@ -220,8 +258,8 @@ header{
   @include border-radius-a (0px,0px,10px,10px);
   @include arrange(none ,border-box);
   @include padding (20px,20px,20px,20px);
-  @include height-width (450px, 100%);
-  @include positioning(50px,none,none,none);
+  @include height-width (450px, 99.55%);
+  margin-top: 50px;
   background-color:$primary-color;
   display: none;
   z-index:3;
@@ -341,7 +379,7 @@ body > div:nth-of-type(2){
   }
 
   #about{
-    top:40px;
+    margin-top:40px;
   }
 
   body > div:nth-of-type(2){
@@ -415,7 +453,7 @@ body > div:nth-of-type(2){
   }
 
   #about{
-    top:40px;
+    margin-top:40px;
   }
 
   body > div:nth-of-type(2){
@@ -495,7 +533,7 @@ body > div:nth-of-type(2){
   }
 
   #about{
-    top:40px;
+    margin-top:40px;
   }
 
 

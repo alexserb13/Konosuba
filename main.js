@@ -6,11 +6,20 @@ var about = $("#about");
 var right_text = $("#home > div:first-child > div:nth-child(3)");
 var left_text = $("#home > div:first-child > div:nth-child(2)");
 var homelabel = $("#maintabs > ul > li:first-child> a");
-var form_item = $("body > div:nth-of-type(2) #myform > input:nth-of-type(1), body > div:nth-of-type(2) #myform > input:nth-of-type(2)");
+var form_item = $("body > div:nth-of-type(2) > #myform > input:nth-of-type(1), body > div:nth-of-type(2) > #myform > input:nth-of-type(2)");
 var sliderselector = $(".sli");
 var dots = $(".dots");
 
 homelabel.css({"background-color":"white","color":"#e30089"});
+
+
+$( function() {
+  form_item.tooltip({tooltipClass: "tooltip"});
+  $("textarea").tooltip({tooltipClass: "tooltip"});
+  });
+
+$("ul").removeClass("ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header");
+
 function check(first,second){
   $('#'+first).click(function (event){
     $('#'+first).css("background-color","white");
@@ -98,7 +107,6 @@ function changepanel(variable){
   dots.children().eq(variable).addClass("active");
 
 }
-
 dots.children().eq(0).addClass("active");
 $('.dots').on('click', 'span', function(e) {
 	 			var $this = $(this);
@@ -107,9 +115,10 @@ $('.dots').on('click', 'span', function(e) {
         $this.addClass("active");
 });
 
-var x = 1;
+var x = 1 ;
 var set = setInterval(function(){
   changepanel(x);
+  console.log(x);
   x++;
   if( x == 5 ){
     x=0;
