@@ -134,8 +134,7 @@ $('.dots').on('click', 'span', function(e) {
 
 var x = 1 ;
 var set = setInterval(function(){
-  changepanel(x);
-  console.log(x);
+  changepanel(x); 
   x++;
   if( x == 5 ){
     x=0;

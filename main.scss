@@ -232,11 +232,11 @@ p{
 .left{
     position: absolute;
     left: -200px;
-    clip: rect(0px,480px,300px,200px);
+    clip: rect(0px,480px,300px,10vw);
 }
 .current{
   position: relative;
-  left: 22.5vw;
+  left: 24vw;
 }
 
 .right{
